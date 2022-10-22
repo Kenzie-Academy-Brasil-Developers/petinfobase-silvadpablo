@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/reset.css">
+    <link rel="stylesheet" href="../../styles/globalStyles.css">
+    <link rel="stylesheet" href="../../styles/displays.css">
+    <link rel="stylesheet" href="../../styles/buttons.css">
+    <link rel="stylesheet" href="../../styles/texts.css">
+    <link rel="stylesheet" href="../../styles/inputs.css">
+    <link rel="stylesheet" href="../../styles/modals.css">
+    <link rel="stylesheet" href="./register.css">
+    <title>Petinfo - Cadastro</title>
+</head>
+<body>
+    <main class="flex items-center justify-center">
+        <section class="flex flex-col section-form">
+            <div class="flex justify-between items-center">
+                <h2 class="registration-login">Cadastro</h2>
+                <button class="btn btn-big btn-outline back-login">Voltar para o login</button>
+            </div>
+            <form class="flex flex-col">
+                <label class="input-label" for="username">Usuário</label>
+                <input class="input" type="text" name="username" id="username" placeholder="Digite seu usuário aqui">
+                <label class="input-label" for="email">Email</label>
+                <input class="input" type="email" name="email" id="email" placeholder="Digite sua email aqui.">
+                <label class="input-label" for="avatar">Link da foto de perfil</label>
+                <input class="input" type="text" name="avatar" id="avatar" placeholder="Insira o link aqui.">
+                <label class="input-label" for="password">Senha</label>
+                <input class="input" type="password" name="password" id="password" placeholder="Digite sua senha aqui.">
+                <button type="submit" class="btn btn-big btn-primary">Cadastrar</button>
+            </form>
+            <div class="flex flex-col login-bottom">
+                <button class="btn btn-big btn-outline back-login">Voltar para o login</button>
+            </div>
+        </section>
+
+        <section class="flex flex-col">
+            <h1 class="register-title-top">Petinfo</h1>
+            <h2 class="register-oba"> Ooooooooba!</h2>
+            <p class="register-text">Todas as informações para melhorar a vida do seu pet em um só lugar</p>
+            <div class="flex imgs-container login-imgs">
+                <img src="../../assets/imgs/register-cat1.png" alt="image of a cat">
+                <div class="flex flex-col login-imgs">
+                    <div class="flex login-imgs">
+                        <img src="../../assets/imgs/register-cat2.png" alt="image of a cat">
+                        <img src="../../assets/imgs/register-dog1.png" alt="image of a dog">
+                    </div>
+                    <img src="../../assets/imgs/register-cat3.png" alt="image of a dog">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="./register.js"></script>
+</body>
+</html>

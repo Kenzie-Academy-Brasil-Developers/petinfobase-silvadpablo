@@ -1,0 +1,133 @@
+body > header {
+    width: 45%;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 64px;
+    gap: 64px;
+}
+
+.header-right {
+    gap: 15px;
+}
+
+.feed-div {
+    width: 45%;
+    margin: 0 auto;
+    background-color: var(--grey8);
+    width: 100vw;
+    margin-top: 64px;
+    margin-bottom: 35px;
+}
+
+.feed {
+    width: 45%;
+    max-width: 800px;
+    margin: 0 auto;
+    background: none;
+    font-size: var(--font-3);
+    font-weight: var(--weight-semibold);
+    line-height: var(--font-height);
+    color: var(--grey1);
+    padding: 17px 0;
+}
+
+main {
+    width: 45%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.no-posts {
+    margin-bottom: 35px;
+    background-color: var(--grey6);
+    border: 2px dashed var(--grey5);
+    padding: 20px;
+    border-radius: 8px;
+    font-family: var(--font-family);
+    color: var(--grey4);
+    font-weight: var(--weight-bold);
+    font-size: var(--font-2);
+}
+
+.all-posts {
+    gap: 64px;
+}
+
+.post {
+    gap: 20px;
+}
+
+.user-header {
+    gap: 20px;
+}
+
+.btn-edit {
+    gap: 10px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    min-width: 200px;
+    background-color: var(--grey9);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--btn-radius);
+    z-index: 1;
+}
+
+.dropdown-content img {
+    object-fit: contain;
+}
+
+#username-logout {
+    font-weight: var(--weight-semibold);
+    font-size: var(--font-4);
+    line-height: var(--font-height);
+    color: var(--grey1);
+    padding-top: 22px;
+    padding-left: 17px;
+    padding-bottom: 9px;
+}
+
+.logout-option {
+    font-weight: var(--weight-semibold);
+    font-size: var(--font-5);
+    line-height: var(--font-height);
+    color: var(--grey4);
+    padding-top: 19px;
+    padding-left: 17px;
+    padding-bottom: 22px;
+    gap: 20px;
+}
+
+.logout-option:hover {
+    background-color: var(--grey7);
+    color: var(--grey1);
+    cursor: pointer;
+}
+
+.logout-icon {
+    background-image: url(../../assets/imgs/sign-out-alt.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 15px;
+}
+
+.logout-option:hover .logout-icon {
+    background-image: url(../../assets/imgs/sign-out-alt-bold.png);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.hover-logout {
+    width: 100%;
+    
+}

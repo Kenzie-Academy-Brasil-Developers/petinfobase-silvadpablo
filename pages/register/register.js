@@ -1,7 +1,6 @@
-import { login } from "../../scripts/requests.js";
-// import { getUser } from "../../scripts/requests.js";
+import { register } from "../../scripts/requests.js"
 
-function loginEvent () {
+function eventRegister () {
     const form = document.querySelector("form")
     const elements = [...form.elements]
     
@@ -14,13 +13,18 @@ function loginEvent () {
                 body[elem.id] = elem.value
             }
         })
-        login(body)
+        register(body)
     })
 }
-loginEvent()
+eventRegister()
 
-const btnRegister = document.getElementById("btn-register")
+const loginButtons = document.querySelectorAll(".back-login")
+const buttons = [...loginButtons]
 
-btnRegister.addEventListener("click", () => {
-    window.location.replace("./pages/register/register.html")
+buttons.forEach(element => {
+    element.addEventListener("click", () => {
+        window.location.replace("../../index.html")
+    })
 })
+
+

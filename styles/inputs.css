@@ -1,0 +1,37 @@
+.input {
+    background-color: var(--grey8);
+    color: var(--grey4);
+    font-size: var(--font-4);
+    font-weight: var(--weight-regular);
+    border-radius: var(--input-radius);
+    font-family: var(--input-font);
+    line-height: var(--font-height);
+    padding: 10px 16px;
+    border: var(--btn-border);
+    border-color: var(--grey6);
+    margin-bottom: 26px;
+    outline: none;
+}
+
+.input-label {
+    font-weight: var(--weight-semibold);
+    line-height: var(--font-height);
+}
+
+.input:focus {
+    background-color: var(--grey9);
+    border-color: var(--grey1);
+}
+
+.input:invalid {
+    outline: var(--alert1);
+}
+
+.input-error {
+    font-family: var(--btn-font);
+    color: var(--alert1);
+    font-size: var(--font-4);
+    font-family: var(--input-font);
+    font-weight: var(--weight-semibold);
+    line-height: var(--font-height);
+}

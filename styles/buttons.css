@@ -1,0 +1,155 @@
+.btn {
+    border-radius: var(--btn-radius);
+    border: var(--btn-border);
+    font-family: var(--btn-font);
+    font-weight: var(--weight-semibold);
+    line-height: var(--font-height);
+    cursor: pointer;
+}
+
+.btn-big {
+    padding: var(--btn-padding-primary);
+    font-size: var(--font4);
+}
+
+.btn-medium {
+    padding: var(--btn-padding-medium);
+    font-size: var(--font5);
+}
+
+.btn-primary {
+    background-color: var(--brand1);
+    border-color: var(--brand1);
+    color: var(--grey9);
+}
+
+.btn-primary:hover {
+    background-color: var(--brand2);
+    border-color: var(--brand2);
+}
+
+.btn-loading {
+    background-color: var(--brand2);
+    border-color: var(--brand2);
+    background-image: url(../assets/imgs/spinner.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.btn-grey {
+    background-color: var(--grey6);
+    border-color: var(--grey6);
+    color: var(--grey4);   
+}
+
+.btn-grey:hover {
+    color: var(--grey3);
+}
+
+.btn-alert {
+    background-color: var(--alert1);
+    color: var(--grey9);
+}
+
+.btn-alert:hover {
+    background-color: var(--alert2);
+}
+
+.btn-outline {
+    background-color: var(--grey9);
+    border-color: var(--grey6);
+    font-weight: var(--weight-semibold);
+    color: var(--grey1);
+}
+
+.btn-outline:hover {
+    background-color: var(--grey8);
+    border-color: var(--grey6);
+}
+
+.btn-medium-grey {
+    background-color: var(--grey7);
+    border-color: var(--grey7);
+    color: var(--grey4);
+}
+
+.btn-medium-grey:hover {
+    background-color: var(--grey6);
+    border-color: var(--grey6);
+}
+
+.btn-medium-outline {
+    background-color: var(--grey9);
+    border-color: var(--grey6);
+    color: var(--grey1);
+}
+
+.btn-medium-outline:hover {
+    background-color: var(--grey8);
+    border-color: var(--grey6);
+}
+
+.btn-modal {
+    background-color: var(--success1);
+    border-radius: var(--radius-round);
+    background: url(../assets/imgs/check.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.btn-user {
+    border: var(--btn-border);
+    border-color: var(--brand1);
+    border-radius: var(--radius-round);
+    width: 41px;
+    height: 41px;
+}
+
+.btn-user-hover {
+    background-color: var(--grey9);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--btn-radius);
+}
+
+.btn-user-logout {
+    color: var(--grey4);
+    font-family: var(--font-family);
+    font-size: var(--font4);
+    font-weight: var(--weight-semibold);
+    line-height: var(--font-height);
+}
+
+.btn-user-logout-icon {
+    background-image: url(../assets/imgs/sign-out-alt.png);
+}
+
+.btn-user-logout:hover {
+    background-color: var(--grey7);
+    color: var(--grey1);
+}
+
+.feed {
+    background-color: var(--grey6);
+}
+
+.feed h2 {
+    font-size: var(--font3);
+    font-weight: var(--weight-semibold);
+}
+
+.btn-user-feed {
+    background-image: url(../assets/imgs/Ellipse\ 1.png);
+    border-radius: var(--radius-round);
+}
+
+.modal-close {
+    font-family: var(--font-modal-close);
+    font-size: var(--font5);
+    font-weight: var(--weight-highbold);
+    background-color: var(--grey6);
+    padding: 4px 14px;
+    border: none;
+    color: var(--grey5);
+    border-radius: var(--btn-radius);
+    cursor: pointer;
+}

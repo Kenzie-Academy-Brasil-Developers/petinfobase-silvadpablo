@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/globalStyles.css">
+    <link rel="stylesheet" href="./styles/displays.css">
+    <link rel="stylesheet" href="./styles/buttons.css">
+    <link rel="stylesheet" href="./styles/texts.css">
+    <link rel="stylesheet" href="./styles/inputs.css">
+    <link rel="stylesheet" href="./styles/modals.css">
+    <link rel="stylesheet" href="./pages/login/index.css">
+    <title>Petinfo - Login</title>
+</head>
+<body>
+    <main class="flex items-center justify-center">
+        <section class="flex flex-col">
+            <h1 class="register-title-top">Petinfo</h1>
+            <h2 class="login-title-under"> <span>Amor</span> e <span>carinho</span> por meio do conhecimento</h2>
+            <p class="login-text">Todas as informações para melhorar a vida do seu pet em um só lugar</p>
+            <div class="flex imgs-container login-imgs">
+                <div class="flex flex-col login-imgs">
+                    <div class="flex login-imgs">
+                        <img src="./assets/imgs/login-cat1.png" alt="image of a cat">
+                        <img src="./assets/imgs/login-dog1.png" alt="image of a dog">
+                    </div>
+                    <img src="./assets/imgs/login-dog2.png" alt="image of a dog">
+                </div>
+                <img src="./assets/imgs/login-cat2.png" alt="image of a cat">
+            </div>
+        </section>
+
+        <section class="flex flex-col section-form">
+            <h2 class="registration-login">Login</h2>
+            <form class="flex flex-col">
+                <label class="input-label" for="email">Email</label>
+                <input class="input" type="email" name="email" id="email" placeholder="Digite seu email aqui">
+                <label class="input-label" for="password">Senha</label>
+                <input class="input" type="password" name="password" id="password" placeholder="Digite sua senha aqui.">
+                <button type="submit" class="btn btn-big btn-primary">Acessar</button>
+            </form>
+            <div class="flex flex-col login-bottom">
+                <p class="no-account">Ainda não possui conta?</p>
+                <p class="no-account-info">Clicando no botão abaixo, você pode se cadastrar rapidamente</p>
+                <button id="btn-register" class="btn btn-big btn-outline">Cadastrar</button>
+            </div>
+        </section>
+    </main>
+    <script type="module" src="./pages/login/index.js"></script>
+</body>
+</html>

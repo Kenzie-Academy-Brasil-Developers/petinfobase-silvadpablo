@@ -1,0 +1,134 @@
+.modal-success {
+    font-family: var(--font-family);
+    color: var(--success1);
+    font-size: var(--font-4);
+    font-weight: var(--weight-semibold);
+}
+
+.modal-success-text {
+    font-family: var(--font-family);
+    color: var(--grey2);
+    font-weight: var(--weight-regular);
+    line-height: var(--modal-text-height);
+}
+
+.link {
+    font-family: var(--font-family);
+    color: var(--brand1);
+    font-size: var(--font-4);
+    font-weight: var(--weight-regular);
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.user-name {
+    font-family: var(--font-family);
+    font-size: var(--font-4);
+    font-weight: var(--weight-semibold);
+    color: var(--grey1);
+    line-height: var(--font-height);
+}
+
+.registration-login {
+    font-size: var(--font-3);
+    font-weight: var(--weight-semibold);
+    color: var(--grey1);
+}
+
+.register-title-top {
+    font-size: var(--font-1);
+    font-weight: var(--weight-semibold);
+    color: var(--grey1);
+}
+
+.register-oba {
+    font-size: var(--font-1);
+    font-weight: var(--weight-bold);
+    color: var(--brand1);
+}
+
+.register-text {
+    font-size: var(--font-4);
+    font-weight: var(--weight-regular);
+}
+
+.login-title-under {
+    font-size: var(--font-1);
+    font-weight: var(--weight-bold);
+    line-height: var(--font-height);
+    color: var(--grey1);
+}
+
+.login-title-under span {
+    color: var(--brand1);
+}
+
+.login-text {
+    font-size: var(--font-4);
+    color: var(--grey3);
+    line-height: var(--font-height);
+}
+
+.no-account {
+    font-size: var(--font-4);
+    font-weight: var(--weight-semibold);
+}
+
+.no-account-info {
+    font-size: var(--font-4);
+    font-weight: var(--weight-regular);
+}
+
+.home-title {
+    font-size: var(--font-2);
+    font-weight: var(--weight-semibold);
+    line-height: var(--font-height);
+    color: var(--grey1);
+}
+
+.home-feed {
+    font-size: var(--font-3);
+    font-weight: var(--weight-semibold);
+    line-height: var(--font-height);
+    color: var(--grey1);
+}
+
+.post-user {
+    color: var(--grey1);
+    font-size: var(--font-5);
+    font-weight: var(--weight-semibold);
+    padding-right: 20px;
+    border-right: 3px solid var(--grey6);
+}
+
+.post-date {
+    color: var(--grey5);
+    font-size: var(--font-5);
+    font-weight: var(--weight-semibold);
+}
+
+.post-title {
+    font-size: var(--font-2);
+    font-weight: var(--weight-bold);
+    color: var(--grey1);
+}
+
+.post-text {
+    font-size: var(--font-4);
+    font-weight: var(--weight-regular);
+}
+
+.modal-title {
+    font-size: var(--font-3);
+    color: var(--grey1);
+    font-weight: var(--weight-semibold);
+}
+
+.modal-certain {
+    font-size: var(--font-2);
+    font-weight: var(--weight-semibold);
+    color: var(--grey1);
+}

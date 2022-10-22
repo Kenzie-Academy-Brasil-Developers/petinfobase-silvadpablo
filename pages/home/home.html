@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/reset.css">
+    <link rel="stylesheet" href="../../styles/globalStyles.css">
+    <link rel="stylesheet" href="../../styles/displays.css">
+    <link rel="stylesheet" href="../../styles/buttons.css">
+    <link rel="stylesheet" href="../../styles/inputs.css">
+    <link rel="stylesheet" href="../../styles/texts.css">
+    <link rel="stylesheet" href="../../styles/modals.css">
+    <link rel="stylesheet" href="./home.css">
+    <title>Petinfo - Home</title>
+</head>
+<body>
+    <!-- <div class="modal-container edit-post">
+        <div class="modal">
+            <div class="flex items-center justify-between modal-header">                
+                <p class="post-title">Edição</p>
+                <button class="modal-close">X</button>
+            </div>
+            <div class="flex flex-col modal-edit">
+                <label class="input-label" for="title-input">Título do post</label>
+                <input class="input" type="text" name="title-input" id="title-input" placeholder="Digite seu título aqui"
+                value="Outubro Rosa: Detalhes sobre a importância da prevenção do câncer de mama em cadelas e gatas">
+                <label class="input-label" for="post-input">Conteúdo do post</label>
+                <textarea class="input" name="post-input" id="post-input" cols="30" rows="10" placeholder="Desenvolva o conteúdo da postagem aqui">Assim como em humanos, cadelas e gatas também podem desenvolver câncer de mama. Ainda hoje, para ambas as espécies, o câncer de mama tem maior...</textarea>
+            </div>
+            <div class="flex justify-end modal-edit-buttons">
+                <button class="btn btn-big btn-grey">Cancelar</button>
+                <button class="btn btn-big btn-primary">Salvar Alterações</button>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- <div class="modal-container delete-post">
+        <div class="modal">
+            <div class="flex items-center justify-between modal-header">                
+                <p class="post-title">Confirmação de exclusão</p>
+                <button class="modal-close">X</button>
+            </div>
+            <div class="flex flex-col modal-post">
+                <h2 class="post-title">Tem certeza que deseja excluir este post?</h2>
+                <p class="post-text">Esta ação não poderá ser desfeita, então pedimos que tenha cautela antes de concluir.</p>
+            </div>
+            <div class="flex modal-delete-buttons">
+                <button class="btn btn-big btn-grey">Cancelar</button>
+                <button class="btn btn-big btn-alert">Sim, excluir este post</button>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- <div class="modal-response">
+        <div class="flex">
+            <img src="../../assets/imgs/check.png" alt="check icon">            
+            <h2 class="modal-success">Post deletado com sucesso!</h2>
+        </div>
+        <p class="modal-success-text">O post selecionado para exclusão foi deletado, a partir de agora não aparecerá no seu feed.</p>
+    </div> -->
+
+    <header class="flex flex-col">
+        <div class="flex items-center justify-between">
+            <h1 class="home-title">Petinfo</h1>
+            <div class="flex items-center header-right">
+                <button id="btn-create-post" class="btn btn-big btn-primary">Criar Publicação</button>
+                <div class="dropdown">
+                    <img class="btn-user" src="#" alt="User profile image">
+                    <div class="dropdown-content">
+                        <p id="username-logout">@username</p>
+                        <div class="flex logout-option">
+                            <div class="logout-icon"></div>
+                            <p>Sair da conta</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="feed-div">
+        <div class="feed">
+            <h2 class="home-feed">Feed</h2>
+        </div>
+    </div>
+    <main>
+        <!-- <div class="flex justify-center no-posts">Nenhuma postagem criada</div> -->
+        <ul class="flex flex-col all-posts"></ul>
+    </main>
+
+    <script type="module" src="./home.js"></script>
+</body>
+</html>
