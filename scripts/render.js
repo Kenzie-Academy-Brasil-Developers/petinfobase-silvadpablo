@@ -1,3 +1,5 @@
+import { getUser, deletePost, editPost, loadPosts } from "./requests.js";
+
 export function renderPosts (array, localUserName) {
     const allPosts = document.querySelector(".all-posts")
     allPosts.innerHTML = ""
@@ -43,11 +45,19 @@ export function renderPosts (array, localUserName) {
             btnEdit.classList = "btn btn-medium btn-medium-outline"
             btnEdit.innerText = "Editar"
             editDiv.append(btnEdit)
+
+            btnEdit.addEventListener("click", () => {
+                renderModalEditPost(element)
+            })
     
             let btnDelete = document.createElement("button")
             btnDelete.classList = "btn btn-medium btn-medium-grey"
             btnDelete.innerText = "Excluir"
             editDiv.append(btnDelete)
+
+            btnDelete.addEventListener("click", () => {
+                renderModalDeletePost(element)
+            })
         }
 
         let h2Title = document.createElement("h2")
@@ -56,7 +66,7 @@ export function renderPosts (array, localUserName) {
         post.append(h2Title)
 
         let pText = document.createElement("p")
-        pText.classList = "post-text"
+        pText.classList = "post-text text-truncated"
         pText.innerText = content
         post.append(pText)
 
@@ -71,10 +81,6 @@ export function renderPosts (array, localUserName) {
         })
     });
 }
-
-// export function renderNone () {
-
-// }
 
 export function renderModalResponse (message) {
     const body = document.querySelector("body")
@@ -98,13 +104,8 @@ export function renderModalResponse (message) {
     div.append(h2)
 }
 
-export function renderUserImg (body) {
-
-}
-
 export function renderModalCreate () {
     const body = document.querySelector("body")
-    body.style = "overflow:hidden"
 
     let container = document.createElement("div")
     container.classList = "modal-container create-post"
@@ -190,8 +191,6 @@ export function renderModalCreate () {
 function renderModalOpenPost (element) {
     let {title, content, user: {username, avatar}} = element
     const body = document.querySelector("body")
-    // body.style = "overflow:hidden"
-    
 
     let modalContainer = document.createElement("div")
     modalContainer.classList = "modal-container open-post"
@@ -232,7 +231,6 @@ function renderModalOpenPost (element) {
     modalHeader.append(close)
     close.addEventListener("click", () => {
         event.target.parentElement.parentElement.parentElement.remove()
-        body.style = "overflow:show"
     })
 
     let post = document.createElement("div")
@@ -250,7 +248,175 @@ function renderModalOpenPost (element) {
     post.append(pContent)
 }
 
+function renderModalEditPost (element) {
+    let {id, title, content} = element
+    let body = document.querySelector("body")
 
+    let container = document.createElement("div")
+    container.classList = "modal-container edit-post"
+    body.insertAdjacentElement("afterbegin", container)
+
+    let modal = document.createElement("div")
+    modal.classList = "modal"
+    container.append(modal)
+
+    let modalHeader = document.createElement("div")
+    modalHeader.classList = "flex items-center justify-between modal-header"
+    modal.append(modalHeader)
+
+    let pEdit = document.createElement("p")
+    pEdit.classList = "post-title"
+    pEdit.innerText = "Edição"
+    modalHeader.append(pEdit)
+
+    let close = document.createElement("button")
+    close.classList = "modal-close"
+    close.innerText = "X"
+    modalHeader.append(close)
+
+    close.addEventListener("click", () => {
+        event.target.parentElement.parentElement.parentElement.remove()
+    })
+
+    let modalEdit = document.createElement("modal-edit")
+    modalEdit.classList = "flex flex-col modal-edit"
+    modal.append(modalEdit)
+
+    let labelTitle = document.createElement("label")
+    labelTitle.classList = "input-label"
+    labelTitle.for = "title"
+    labelTitle.innerText = "Título do post"
+    modalEdit.append(labelTitle)
+
+    let inputTitle = document.createElement("input")
+    inputTitle.classList = "input"
+    inputTitle.type = "text"
+    inputTitle.name = "title"
+    inputTitle.id = "title"
+    inputTitle.placeholder = "Digite seu título aqui"
+    inputTitle.value = title
+    modalEdit.append(inputTitle)
+
+    let labelContent = document.createElement("label")
+    labelContent.classList = "input-label"
+    labelContent.for = "content"
+    labelContent.innerText = "Conteúdo do post"
+    modalEdit.append(labelContent)
+
+    let textConent = document.createElement("textarea")
+    textConent.classList = "input"
+    textConent.name = "content"
+    textConent.id = "content"
+    textConent.cols = "30"
+    textConent.rows = "10"
+    textConent.placeholder = "Desenvolva o conteúdo da postagem aqui"
+    textConent.value = content
+    modalEdit.append(textConent)
+
+    let modalButtons = document.createElement("div")
+    modalButtons.classList = "flex justify-end modal-edit-buttons"
+    modal.append(modalButtons)
+
+    let cancel = document.createElement("button")
+    cancel.classList = "btn btn-big btn-grey"
+    cancel.innerText = "Cancelar"
+    modalButtons.append(cancel)
+
+    cancel.addEventListener("click", () => {
+        event.target.parentElement.parentElement.parentElement.remove()
+    })
+
+    let save = document.createElement("button")
+    save.classList = "btn btn-big btn-primary"
+    save.innerText = "Salvar alterações"
+    modalButtons.append(save)
+
+    save.addEventListener("click", async () => {
+        const body = {}
+        body.title = inputTitle.value
+        body.content = textConent.value
+
+        event.target.parentElement.parentElement.parentElement.remove()
+        await editPost(body, id)
+        const posts = await loadPosts()
+        await getUser().then(e => {
+            renderPosts(posts, e.username)
+        })
+    })
+}
+
+function renderModalDeletePost (element) {
+    let {id} = element
+    let body = document.querySelector("body")
+
+    let container = document.createElement("div")
+    container.classList = "modal-container delete-post"
+    body.insertAdjacentElement("afterbegin", container)
+
+    let modal = document.createElement("div")
+    modal.classList = "modal"
+    container.append(modal)
+
+    let modalHeader = document.createElement("div")
+    modalHeader.classList = "flex items-center justify-between modal-header"
+    modal.append(modalHeader)
+
+    let pEdit = document.createElement("p")
+    pEdit.classList = "post-title"
+    pEdit.innerText = "Confirmação de exclusão"
+    modalHeader.append(pEdit)
+
+    let close = document.createElement("button")
+    close.classList = "modal-close"
+    close.innerText = "X"
+    modalHeader.append(close)
+
+    close.addEventListener("click", () => {
+        event.target.parentElement.parentElement.parentElement.remove()
+    })
+
+    let post = document.createElement("div")
+    post.classList = "flex flex-col modal-post"
+    modal.append(post)
+
+    let h2Title = document.createElement("h2")
+    h2Title.classList = "post-title"
+    h2Title.innerText = "Tem certeza que deseja excluir este post?"
+    post.append(h2Title)
+
+    let pContent = document.createElement("p")
+    pContent.classList = "post-text"
+    pContent.innerText = "Esta ação não poderá ser desfeita, então pedimos que tenha cautela antes de concluir."
+    post.append(pContent)
+
+    let modalButtons = document.createElement("div")
+    modalButtons.classList = "flex modal-delete-buttons"
+    modal.append(modalButtons)
+
+    let cancel = document.createElement("button")
+    cancel.classList = "btn btn-big btn-grey"
+    cancel.innerText = "Cancelar"
+    modalButtons.append(cancel)
+
+    cancel.addEventListener("click", () => {
+        event.target.parentElement.parentElement.parentElement.remove()
+    })
+
+    let removePost = document.createElement("button")
+    removePost.classList = "btn btn-big btn-alert"
+    removePost.innerText = "Sim, excluir este post"
+    modalButtons.append(removePost)
+
+    removePost.addEventListener("click", async () => {
+        event.target.parentElement.parentElement.parentElement.remove()
+        await deletePost(id)
+        const posts = await loadPosts()
+        renderPosts(posts)
+        await getUser().then(e => {
+            renderPosts(posts, e.username)
+        })
+    })
+}
 
 function setUpDate () {
     let date = new Date()
@@ -258,8 +424,4 @@ function setUpDate () {
         let Month = month.charAt(0).toUpperCase() + month.slice(1)
         let fullDate = `${Month} de ${date.getFullYear()}`
         return fullDate
-}
-
-function disableScroll () {
-    let scrollTop 
 }

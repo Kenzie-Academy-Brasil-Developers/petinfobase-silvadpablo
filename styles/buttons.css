@@ -23,18 +23,59 @@
     color: var(--grey9);
 }
 
+#login-btn:disabled {
+    cursor: unset;
+    background-color: var(--grey5);
+    border: none;
+}
+
 .btn-primary:hover {
     background-color: var(--brand2);
     border-color: var(--brand2);
 }
 
-.btn-loading {
+/* .btn-loading {
     background-color: var(--brand2);
     border-color: var(--brand2);
     background-image: url(../assets/imgs/spinner.png);
     background-position: center;
     background-repeat: no-repeat;
+} */
+
+#login-btn {
+    position: relative;
 }
+
+.btn-loading .btn-text {
+    visibility: hidden;
+    opacity: 0;
+  }
+  
+  .btn-loading::after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border: 4px solid transparent;
+    border-top-color: var(--grey9);
+    border-radius: 50%;
+    animation: button-loading-spinner 1s ease infinite;
+  }
+  
+  @keyframes button-loading-spinner {
+    from {
+      transform: rotate(0turn);
+    }
+  
+    to {
+      transform: rotate(1turn);
+    }
+  }
 
 .btn-grey {
     background-color: var(--grey6);

@@ -23,8 +23,8 @@
     border-color: var(--grey1);
 }
 
-.input:invalid {
-    outline: var(--alert1);
+.input-field-error {
+    border-color: var(--alert1);
 }
 
 .input-error {

@@ -52,11 +52,10 @@ function eventCreate() {
             })
             await publishPost(body)
             const posts = await loadPosts()
-            event.path[3].remove()
-            let bodyEl = document.querySelector("body")
-            bodyEl.style = ""
-            renderPosts(posts)
-
+            event.target.parentElement.parentElement.parentElement.remove()
+            await getUser().then(e => {
+                renderPosts(posts, e.username)
+            })
         })
     })
 }
